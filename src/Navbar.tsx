@@ -1,32 +1,33 @@
-import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import CreateFlask from "./components/CreateFlask";
+
 function Navbar() {
     return (
         <Router>
-            <nav>
-                <ul>
+            <nav className="bg-red">
+                <ul className="flex bg-red-300 justify-between">
                     <li>
-                        <Link to="/">Home</Link>
+                        <Link to="/profile">Profile</Link>
                     </li>
                     <li>
-                        <Link to="/all">All</Link>
+                        <Link to="/">New</Link>
                     </li>
                     <li>
-                        <Link to="/dashboard">Dashboard</Link>
+                        <Link to="/all">View All</Link>
                     </li>
                 </ul>
             </nav>
 
             <Routes>
-                <Route path="/" element={<Home/>}/>
-                <Route path="/all" element={<About/>}/>
-                <Route path="/dashboard" element={<Dashboard/>}/>
+                <Route path="/profile" element={<Profile/>}/>
+                <Route path="/" element={<CreateFlask/>}/>
+                <Route path="/all" element={<AllFlasks/>}/>
             </Routes>
         </Router>
     )
 }
 
-function Home() {
+function Profile() {
     return (
       <div>
         <h2>Home</h2>
@@ -34,18 +35,10 @@ function Home() {
     );
   }
   
-  function About() {
+  function AllFlasks() {
     return (
       <div>
-        <h2>About</h2>
-      </div>
-    );
-  }
-  
-  function Dashboard() {
-    return (
-      <div>
-        <h2>Dashboard</h2>
+        <h2>View All</h2>
       </div>
     );
   } 
