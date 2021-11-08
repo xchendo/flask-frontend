@@ -1,19 +1,21 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
 import CreateFlask from "./components/CreateFlask";
 
 function Navbar() {
+    const activeLinkClasses = 'bg-yellow-300';
+
     return (
         <Router>
             <nav className="bg-red">
                 <ul className="flex bg-red-300 justify-between">
                     <li>
-                        <Link to="/profile">Profile</Link>
+                        <NavLink className={({isActive}) => isActive ?  activeLinkClasses : ''} to="/profile">Profile</NavLink>
                     </li>
                     <li>
-                        <Link to="/">New</Link>
+                        <NavLink className={({isActive}) => isActive ?  activeLinkClasses : ''} to="/">New</NavLink>
                     </li>
                     <li>
-                        <Link to="/all">View All</Link>
+                        <NavLink className={({isActive}) => isActive ?  activeLinkClasses : ''} to="/all">View All</NavLink>
                     </li>
                 </ul>
             </nav>
