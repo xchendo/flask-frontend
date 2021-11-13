@@ -1,8 +1,9 @@
 import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
 import CreateFlask from "./components/CreateFlask";
+import ViewFlasks from "./components/ViewFlasks";
 
 function Navbar() {
-    const activeLinkClasses = 'bg-yellow-300';
+    const activeLinkClasses: string = 'bg-yellow-300';
 
     return (
         <Router>
@@ -23,7 +24,7 @@ function Navbar() {
             <Routes>
                 <Route path="/profile" element={<Profile/>}/>
                 <Route path="/" element={<CreateFlask/>}/>
-                <Route path="/all" element={<AllFlasks/>}/>
+                <Route path="/all" element={<ViewFlasks/>}/>
             </Routes>
         </Router>
     )
@@ -35,14 +36,6 @@ function Profile() {
         <h2>Home</h2>
       </div>
     );
-  }
-  
-  function AllFlasks() {
-    return (
-      <div>
-        <h2>View All</h2>
-      </div>
-    );
-  } 
+}
 
 export default Navbar;
