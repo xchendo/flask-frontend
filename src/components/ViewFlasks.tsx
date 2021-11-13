@@ -1,5 +1,7 @@
 import React from "react";
 
+// TODO: When we are actually making API Requests, refactor this class to a function
+// and replace the componentDidMount method with a useEffect hook
 class ViewFlasks extends React.Component <ViewFlaskProps, ViewFlaskState> {
     constructor(props: ViewFlaskProps) {
         super(props);
@@ -35,7 +37,6 @@ class ViewFlasks extends React.Component <ViewFlaskProps, ViewFlaskState> {
             {
                 flasks.length > 0 ? 
                     <table className="w-full">
-<<<<<<< HEAD
                        <thead>
                             <tr className="flex justify-between">
                                 <th>Task</th>
@@ -54,22 +55,6 @@ class ViewFlasks extends React.Component <ViewFlaskProps, ViewFlaskState> {
                             })
                         }
                         </tbody>
-=======
-                        <tr className="flex justify-between">
-                            <th>Task</th>
-                            <th>Total Time (HH:ss)</th>
-                        </tr>
-                            {
-                                flasks.map((flask) => {
-                                    return (
-                                        <tr key={flask.id} className="flex justify-between border-b border-black mb-2">
-                                            <td>{flask.title}</td>
-                                            <td>{flask.time}</td>
-                                        </tr>
-                                    )
-                                })
-                            }
->>>>>>> 1f07b12 (Add view all component)
                     </table>
                     : <span>Nothing to see here folks</span> 
             }
