@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import Timer from "./Timer";
+import { useEffect, useState } from 'react';
+import Timer from './Timer';
 
 function CreateFlask() {
 
@@ -65,20 +65,20 @@ function CreateFlask() {
     return (
         <>
             <Timer time={timeElapsedInSeconds}/>
-            <form className="flex flex-col" onSubmit={handleSubmit}>
-                <label className="text-xl">Task</label>    
-                    <input className="border py-2 px-3 mb-5" type="text"
+            <form className='flex flex-col' onSubmit={handleSubmit}>
+                <label className='text-xl'>Task</label>    
+                    <input className='border py-2 px-3 mb-5' type='text'
                         onChange={(e) => setTask(e.target.value)}
                     />
-                <label className="text-xl">Notes</label>
-                    <input className="border py-2 px-3 mb-5" type="text"
+                <label className='text-xl'>Notes</label>
+                    <input className='border py-2 px-3 mb-5' type='text'
                         onChange={(e) => setNotes(e.target.value)}
                     />
-                <button type="button" className={`${buttonColor} py-2`} onClick={handlePause}>
-                    {!timerStarted ? "Start" : "Pause"}
+                <button type='button' className={`${buttonColor} py-2`} onClick={handlePause}>
+                    {!timerStarted ? 'Start' : 'Pause'}
                 </button>
                 {/* Don't allow the saving of an empty session */}
-                {timeElapsedInSeconds > 0 && <button type="submit" className="py-2">Finish Session</button> }
+                {timeElapsedInSeconds > 0 && <button type='submit' className='py-2'>Finish Session</button> }
             </form>
         </>
     );
